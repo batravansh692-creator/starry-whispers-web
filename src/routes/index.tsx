@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Star, Sparkles, MessageCircle, MapPin, Clock, ShieldCheck } from "lucide-react";
-import heroCosmos from "@/assets/hero-cosmos.jpg";
+import { ArrowRight, Star, Sparkles, MessageCircle, MapPin, Clock, ShieldCheck, Quote, CheckCircle2, Phone } from "lucide-react";
+import portrait from "@/assets/astrologer-portrait.jpg";
+import desk from "@/assets/astrologer-desk.jpg";
 import { SERVICES } from "@/lib/services";
 import { SITE, waLink } from "@/lib/site";
 import * as Icons from "lucide-react";
@@ -19,124 +20,186 @@ function Home() {
   return (
     <>
       {/* HERO */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 -z-10">
-          <img src={heroCosmos} alt="" className="h-full w-full object-cover opacity-40" />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/40 to-background" />
-        </div>
-        <div className="relative starry mx-auto max-w-6xl px-5 pt-20 pb-28 md:pt-28 md:pb-36">
-          <div className="max-w-3xl">
-            <span className="inline-flex items-center gap-2 rounded-full border border-gold/40 bg-card/40 backdrop-blur px-3 py-1 text-xs text-gold">
+      <section className="relative overflow-hidden bg-gradient-warm">
+        <div className="mx-auto max-w-6xl px-5 pt-16 pb-20 md:pt-24 md:pb-28 grid lg:grid-cols-12 gap-12 items-center">
+          <div className="lg:col-span-7">
+            <span className="inline-flex items-center gap-2 rounded-full border border-gold/40 bg-card px-3 py-1 text-xs text-gold shadow-soft">
               <Star className="h-3.5 w-3.5 fill-current" /> 5.0 on Google · Women-owned · Greater Noida
             </span>
-            <h1 className="mt-6 font-display text-5xl md:text-7xl leading-[1.05]">
-              Find clarity in the <span className="text-gradient-gold">stars</span>, answers in your <span className="text-gradient-gold">chart</span>.
+            <h1 className="mt-6 font-display text-5xl md:text-7xl leading-[1.04]">
+              Find clarity in the <span className="text-gradient-gold">stars</span>,
+              <br className="hidden md:block" /> answers in your <span className="text-gradient-gold">chart</span>.
             </h1>
             <p className="mt-6 text-lg text-muted-foreground max-w-2xl">
-              Personalised Vedic astrology consultations by {SITE.astrologer} — for marriage, career,
+              Personalised Vedic astrology consultations by <strong className="text-foreground font-medium">{SITE.astrologer}</strong> — for marriage, career,
               finance, health and life's deeper questions. Traditional shastra, modern compassion.
             </p>
             <div className="mt-9 flex flex-wrap gap-3">
               <a
                 href={waLink(`Namaste ${SITE.astrologer} ji, I'd like to book a consultation.`)}
                 target="_blank" rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-gradient-gold px-6 py-3 text-sm font-medium text-primary-foreground shadow-glow hover:opacity-90"
+                className="inline-flex items-center gap-2 rounded-full bg-gradient-gold px-6 py-3.5 text-sm font-medium text-primary-foreground shadow-glow hover:opacity-90"
               >
                 <MessageCircle className="h-4 w-4" /> Consult on WhatsApp
               </a>
-              <Link to="/contact" className="inline-flex items-center gap-2 rounded-full border border-border bg-card/50 backdrop-blur px-6 py-3 text-sm font-medium hover:bg-card">
+              <Link to="/contact" className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-6 py-3.5 text-sm font-medium hover:bg-secondary shadow-soft">
                 Book a consultation <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
 
-            <div className="mt-12 grid grid-cols-2 sm:grid-cols-3 gap-6 max-w-2xl">
+            <div className="mt-12 grid grid-cols-3 gap-6 max-w-2xl">
               <Stat k="15+" v="Years guiding clients" />
               <Stat k="5000+" v="Charts read" />
               <Stat k="5.0★" v="Google rating" />
             </div>
           </div>
+
+          <div className="lg:col-span-5 relative">
+            <div className="relative rounded-[2rem] overflow-hidden border border-border bg-card shadow-deep aspect-[4/5]">
+              <img src={portrait} alt={`${SITE.astrologer}, Vedic Astrologer`} className="absolute inset-0 h-full w-full object-cover" />
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-background/95 via-background/40 to-transparent p-6">
+                <p className="font-display text-2xl text-foreground">{SITE.astrologer}</p>
+                <p className="text-xs uppercase tracking-[0.2em] text-gold mt-1">Founder · Vedic Astrologer</p>
+              </div>
+            </div>
+            <div className="hidden md:flex absolute -bottom-6 -left-6 rounded-2xl bg-card shadow-deep border border-border px-5 py-4 items-center gap-3">
+              <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-gradient-gold text-primary-foreground"><Star className="h-5 w-5 fill-current" /></span>
+              <div>
+                <p className="text-sm font-semibold">5.0 Google Rating</p>
+                <p className="text-xs text-muted-foreground">Hundreds of happy clients</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* TRUST STRIP */}
+      <section className="border-y border-border/70 bg-card/60">
+        <div className="mx-auto max-w-6xl px-5 py-6 grid grid-cols-2 md:grid-cols-4 gap-6 text-sm">
+          {[
+            { i: ShieldCheck, t: "Confidential" },
+            { i: Sparkles, t: "Classical Vedic" },
+            { i: Star, t: "5.0 Google Rated" },
+            { i: CheckCircle2, t: "Honest Remedies" },
+          ].map(({ i: I, t }) => (
+            <div key={t} className="flex items-center gap-3 justify-center md:justify-start">
+              <I className="h-5 w-5 text-gold" />
+              <span className="font-medium">{t}</span>
+            </div>
+          ))}
         </div>
       </section>
 
       {/* SERVICES */}
-      <section className="mx-auto max-w-6xl px-5 py-20">
+      <section className="mx-auto max-w-6xl px-5 py-24">
         <SectionHeading
           eyebrow="What I offer"
           title="Consultations rooted in tradition"
           subtitle="From birth chart analysis to vastu and remedies — every session is personal, private and practical."
         />
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {SERVICES.slice(0, 6).map((s) => {
             const Icon = (Icons as unknown as Record<string, React.ComponentType<{ className?: string }>>)[s.icon] ?? Sparkles;
             return (
-              <div key={s.slug} className="group relative rounded-2xl border border-border/60 bg-card/60 backdrop-blur p-6 hover:border-gold/50 transition shadow-deep">
-                <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-gold text-primary-foreground shadow-glow">
+              <div key={s.slug} className="group relative rounded-2xl border border-border bg-card p-7 hover:border-gold/60 hover:-translate-y-1 transition-all shadow-soft hover:shadow-deep">
+                <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-gold text-primary-foreground shadow-glow">
                   <Icon className="h-5 w-5" />
                 </div>
-                <h3 className="mt-5 text-xl text-gold">{s.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">{s.short}</p>
+                <h3 className="mt-5 text-xl text-foreground">{s.title}</h3>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{s.short}</p>
+                <a href={waLink(`Namaste ${SITE.astrologer} ji, I'd like to know more about: ${s.title}.`)}
+                  target="_blank" rel="noreferrer"
+                  className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-gold hover:underline">
+                  Enquire <ArrowRight className="h-3.5 w-3.5" />
+                </a>
               </div>
             );
           })}
         </div>
-        <div className="mt-10 text-center">
-          <Link to="/services" className="inline-flex items-center gap-2 text-gold hover:underline">
-            View all services <ArrowRight className="h-4 w-4" />
+        <div className="mt-12 text-center">
+          <Link to="/services" className="inline-flex items-center gap-2 rounded-full border border-gold/50 px-6 py-3 text-sm font-medium text-gold hover:bg-gold/5">
+            View all 8 services <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
 
       {/* WHY */}
-      <section className="mx-auto max-w-6xl px-5 py-20">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <section className="bg-card/60 border-y border-border/70">
+        <div className="mx-auto max-w-6xl px-5 py-24 grid lg:grid-cols-2 gap-14 items-center">
+          <div className="relative rounded-[2rem] overflow-hidden border border-border shadow-deep aspect-[4/5] max-w-md mx-auto lg:mx-0">
+            <img src={desk} alt={`${SITE.astrologer} at work`} className="absolute inset-0 h-full w-full object-cover" />
+          </div>
           <div>
             <SectionHeading
               eyebrow="Why Saptarishis"
               title="Honest readings. Real remedies."
-              subtitle="No fear-based advice, no unnecessary rituals. Just clear guidance rooted in classical Vedic astrology."
+              subtitle="No fear-based advice, no unnecessary rituals. Just clear guidance rooted in classical Vedic astrology and over 15 years of practice."
             />
-            <ul className="mt-8 space-y-4">
+            <ul className="mt-8 space-y-5">
               <Why icon={ShieldCheck} title="Confidential & non-judgmental" text="Your story stays between us. Always." />
               <Why icon={Sparkles} title="Classical Vedic methods" text="Parashari + Jaimini techniques with dasha and transit precision." />
               <Why icon={Star} title="5.0 rated on Google" text="Trusted by hundreds of families across India and abroad." />
             </ul>
-          </div>
-          <div className="relative rounded-3xl overflow-hidden border border-border/60 shadow-deep aspect-[4/5]">
-            <img src={heroCosmos} alt="Cosmic sky" className="absolute inset-0 h-full w-full object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
-            <div className="absolute bottom-0 p-7">
-              <p className="font-display text-2xl text-gold leading-snug">
-                "The chart never lies — it only waits for someone patient enough to read it."
-              </p>
-              <p className="mt-3 text-sm text-muted-foreground">— Soniya Sharma</p>
+            <div className="mt-10 flex flex-wrap gap-3">
+              <Link to="/about" className="inline-flex items-center gap-2 rounded-full bg-gradient-gold px-6 py-3 text-sm font-medium text-primary-foreground shadow-glow">
+                Meet Soniya <ArrowRight className="h-4 w-4" />
+              </Link>
+              <a href={`tel:+${SITE.whatsapp}`} className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-6 py-3 text-sm font-medium shadow-soft">
+                <Phone className="h-4 w-4 text-gold" /> {SITE.phoneDisplay}
+              </a>
             </div>
           </div>
         </div>
       </section>
 
+      {/* TESTIMONIALS */}
+      <section className="mx-auto max-w-6xl px-5 py-24">
+        <SectionHeading
+          eyebrow="What clients say"
+          title="A 5.0 rated practice — for a reason"
+        />
+        <div className="mt-12 grid gap-6 md:grid-cols-3">
+          {TESTIMONIALS.map((t) => (
+            <figure key={t.name} className="rounded-2xl border border-border bg-card p-7 shadow-soft">
+              <Quote className="h-6 w-6 text-gold/70" />
+              <blockquote className="mt-4 text-sm leading-relaxed text-foreground/85">"{t.text}"</blockquote>
+              <figcaption className="mt-6 flex items-center justify-between">
+                <div>
+                  <p className="text-sm font-semibold">{t.name}</p>
+                  <p className="text-xs text-muted-foreground">{t.role}</p>
+                </div>
+                <div className="flex gap-0.5 text-gold">
+                  {Array.from({ length: 5 }).map((_, i) => <Star key={i} className="h-3.5 w-3.5 fill-current" />)}
+                </div>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </section>
+
       {/* CTA */}
-      <section className="mx-auto max-w-6xl px-5 py-20">
-        <div className="relative overflow-hidden rounded-3xl border border-gold/30 bg-gradient-cosmic p-10 md:p-16 shadow-deep starry">
+      <section className="mx-auto max-w-6xl px-5 pb-24">
+        <div className="relative overflow-hidden rounded-[2rem] border border-gold/40 bg-gradient-cosmic p-10 md:p-16 shadow-deep starry">
           <div className="relative max-w-2xl">
             <h2 className="font-display text-4xl md:text-5xl text-gradient-gold">
               Ready for clarity?
             </h2>
-            <p className="mt-4 text-muted-foreground">
+            <p className="mt-4 text-foreground/80">
               Book a personal consultation — online or in person at our Gaur City 1 office.
               Share your details and we'll continue the conversation on WhatsApp.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link to="/contact" className="inline-flex items-center gap-2 rounded-full bg-gradient-gold px-6 py-3 text-sm font-medium text-primary-foreground shadow-glow">
+              <Link to="/contact" className="inline-flex items-center gap-2 rounded-full bg-gradient-gold px-6 py-3.5 text-sm font-medium text-primary-foreground shadow-glow">
                 Book consultation <ArrowRight className="h-4 w-4" />
               </Link>
               <a href={waLink("Namaste, I'd like a quick astrology consultation.")} target="_blank" rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border border-border bg-card/40 backdrop-blur px-6 py-3 text-sm font-medium">
-                <MessageCircle className="h-4 w-4" /> Chat on WhatsApp
+                className="inline-flex items-center gap-2 rounded-full border border-gold/40 bg-card px-6 py-3.5 text-sm font-medium shadow-soft">
+                <MessageCircle className="h-4 w-4 text-gold" /> Chat on WhatsApp
               </a>
             </div>
             <div className="mt-10 grid sm:grid-cols-2 gap-4 text-sm text-muted-foreground">
-              <p className="flex gap-2"><MapPin className="h-4 w-4 mt-0.5 text-gold" />{SITE.address}</p>
-              <p className="flex gap-2"><Clock className="h-4 w-4 mt-0.5 text-gold" />{SITE.hours}</p>
+              <p className="flex gap-2"><MapPin className="h-4 w-4 mt-0.5 text-gold shrink-0" />{SITE.address}</p>
+              <p className="flex gap-2"><Clock className="h-4 w-4 mt-0.5 text-gold shrink-0" />{SITE.hours}</p>
             </div>
           </div>
         </div>
@@ -145,10 +208,16 @@ function Home() {
   );
 }
 
+const TESTIMONIALS = [
+  { name: "Priya S.", role: "Noida", text: "Soniya ji's reading was incredibly accurate and her remedies are practical. My marriage timing prediction came true exactly." },
+  { name: "Rahul M.", role: "Delhi", text: "Genuine, honest and to the point. No fear tactics, just clear guidance. The career advice changed my path completely." },
+  { name: "Ananya K.", role: "Gurugram", text: "The kundli session felt like a deep conversation, not a transaction. Highly recommend for anyone seeking clarity." },
+];
+
 function Stat({ k, v }: { k: string; v: string }) {
   return (
     <div>
-      <div className="font-display text-3xl text-gradient-gold">{k}</div>
+      <div className="font-display text-3xl md:text-4xl text-gradient-gold">{k}</div>
       <div className="text-xs uppercase tracking-widest text-muted-foreground mt-1">{v}</div>
     </div>
   );
@@ -157,9 +226,9 @@ function Stat({ k, v }: { k: string; v: string }) {
 function SectionHeading({ eyebrow, title, subtitle }: { eyebrow: string; title: string; subtitle?: string }) {
   return (
     <div className="max-w-2xl">
-      <div className="text-xs uppercase tracking-[0.25em] text-gold">{eyebrow}</div>
+      <div className="text-xs uppercase tracking-[0.25em] text-gold font-semibold">{eyebrow}</div>
       <h2 className="mt-3 font-display text-4xl md:text-5xl">{title}</h2>
-      {subtitle && <p className="mt-4 text-muted-foreground">{subtitle}</p>}
+      {subtitle && <p className="mt-4 text-muted-foreground text-lg leading-relaxed">{subtitle}</p>}
     </div>
   );
 }
@@ -167,7 +236,7 @@ function SectionHeading({ eyebrow, title, subtitle }: { eyebrow: string; title: 
 function Why({ icon: Icon, title, text }: { icon: React.ComponentType<{ className?: string }>; title: string; text: string }) {
   return (
     <li className="flex gap-4">
-      <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-card border border-gold/30 text-gold">
+      <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-gold/15 border border-gold/30 text-gold">
         <Icon className="h-5 w-5" />
       </span>
       <div>
