@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Star, ShieldCheck, Sparkles, Heart, ArrowRight } from "lucide-react";
-import heroCosmos from "@/assets/hero-cosmos.jpg";
+import portrait from "@/assets/astrologer-portrait.jpg";
 import { SITE } from "@/lib/site";
 
 export const Route = createFileRoute("/about")({
@@ -42,12 +42,11 @@ function AboutPage() {
           </div>
         </div>
 
-        <div className="lg:col-span-2 relative rounded-3xl overflow-hidden border border-border/60 shadow-deep min-h-[420px]">
-          <img src={heroCosmos} alt="Cosmic sky" className="absolute inset-0 h-full w-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
-          <div className="absolute bottom-0 p-8">
+        <div className="lg:col-span-2 relative rounded-3xl overflow-hidden border border-border shadow-deep min-h-[420px]">
+          <img src={portrait} alt={SITE.astrologer} className="absolute inset-0 h-full w-full object-cover" />
+          <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-background/95 via-background/40 to-transparent p-8">
             <Heart className="h-6 w-6 text-gold" />
-            <p className="mt-3 font-display text-2xl text-gold leading-snug">
+            <p className="mt-3 font-display text-2xl text-foreground leading-snug">
               "Every chart is a map of grace. My work is to help you read it without fear."
             </p>
             <p className="mt-3 text-sm text-muted-foreground">— {SITE.astrologer}</p>
