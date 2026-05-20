@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import * as Icons from "lucide-react";
-import { ArrowRight, MessageCircle, Sparkles } from "lucide-react";
+import { ArrowRight, MessageCircle, Sparkles, Phone, Video } from "lucide-react";
 import { SERVICES } from "@/lib/services";
 import { SITE, waLink } from "@/lib/site";
 
