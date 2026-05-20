@@ -188,6 +188,16 @@ function Home() {
               Book a personal consultation — online or in person at our Gaur City 1 office.
               Share your details and we'll continue the conversation on WhatsApp.
             </p>
+            <div className="mt-6 flex flex-wrap gap-4">
+              <div className="rounded-2xl border border-gold/30 bg-card/80 px-5 py-3">
+                <p className="text-xs text-muted-foreground">Call consultation</p>
+                <p className="font-display text-2xl text-foreground">{SITE.pricing.currency}{SITE.pricing.call.toLocaleString("en-IN")}</p>
+              </div>
+              <div className="rounded-2xl border border-gold/30 bg-card/80 px-5 py-3">
+                <p className="text-xs text-muted-foreground">Meeting / Video call</p>
+                <p className="font-display text-2xl text-foreground">{SITE.pricing.currency}{SITE.pricing.meeting.toLocaleString("en-IN")}</p>
+              </div>
+            </div>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link to="/contact" className="inline-flex items-center gap-2 rounded-full bg-gradient-gold px-6 py-3.5 text-sm font-medium text-primary-foreground shadow-glow">
                 Book consultation <ArrowRight className="h-4 w-4" />
