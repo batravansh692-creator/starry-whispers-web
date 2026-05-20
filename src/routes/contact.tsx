@@ -38,6 +38,27 @@ function ContactPage() {
           <InfoCard icon={MapPin} title="Visit the office" body={SITE.address} />
           <InfoCard icon={Clock} title="Working hours" body={SITE.hours} />
           <InfoCard icon={Star} title="Google rating" body={`${SITE.rating} ★ — Women-owned business`} />
+
+          <div className="rounded-2xl border border-border/60 bg-card/60 backdrop-blur p-5">
+            <h4 className="text-sm font-semibold text-gold uppercase tracking-wider">Consultation charges</h4>
+            <div className="mt-4 space-y-4">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2 text-sm">
+                  <Phone className="h-4 w-4 text-gold" />
+                  <span>Call Consultation</span>
+                </div>
+                <span className="font-display text-xl text-foreground">{SITE.pricing.currency}{SITE.pricing.call.toLocaleString("en-IN")}</span>
+              </div>
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2 text-sm">
+                  <Video className="h-4 w-4 text-gold" />
+                  <span>Meeting / Video Call</span>
+                </div>
+                <span className="font-display text-xl text-foreground">{SITE.pricing.currency}{SITE.pricing.meeting.toLocaleString("en-IN")}</span>
+              </div>
+            </div>
+          </div>
+
           <a
             href={waLink(`Namaste ${SITE.astrologer} ji, I would like to consult you.`)}
             target="_blank" rel="noreferrer"
