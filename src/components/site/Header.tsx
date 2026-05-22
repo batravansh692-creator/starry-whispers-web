@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { MessageCircle, Sparkles, Menu, X, Phone } from "lucide-react";
+import { MessageCircle, Sparkles, Menu, X, Phone, Instagram } from "lucide-react";
 import { SITE, waLink } from "@/lib/site";
 
 const nav = [
@@ -51,6 +51,15 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-2">
+          <a
+            href={SITE.instagram}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Instagram"
+            className="hidden sm:inline-flex h-10 w-10 items-center justify-center rounded-full border border-border bg-card hover:border-gold/60 transition"
+          >
+            <Instagram className="h-4 w-4 text-gold" />
+          </a>
           <a
             href={waLink(`Namaste ${SITE.astrologer} ji, I would like to book a consultation.`)}
             target="_blank"

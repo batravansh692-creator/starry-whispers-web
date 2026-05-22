@@ -13,6 +13,7 @@ export const SITE = {
   mapsEmbed:
     "https://www.google.com/maps?q=Saptarishis+Astrology+Service+by+Soniya+Sharma+Gaur+City+1+Ghaziabad&output=embed",
   rating: "5.0",
+  instagram: "https://www.instagram.com/saptarishis_astrology_service",
   pricing: {
     call: 3100,
     meeting: 5100,
