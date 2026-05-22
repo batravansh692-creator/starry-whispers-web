@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { MapPin, Clock, MessageCircle, Star, Phone, Video } from "lucide-react";
+import { MapPin, Clock, MessageCircle, Star, Phone, Video, Instagram } from "lucide-react";
 import { ContactForm } from "@/components/site/ContactForm";
 import { SITE, waLink } from "@/lib/site";
 
@@ -38,6 +38,19 @@ function ContactPage() {
           <InfoCard icon={MapPin} title="Visit the office" body={SITE.address} />
           <InfoCard icon={Clock} title="Working hours" body={SITE.hours} />
           <InfoCard icon={Star} title="Google rating" body={`${SITE.rating} ★ — Women-owned business`} />
+          <a
+            href={SITE.instagram}
+            target="_blank" rel="noreferrer"
+            className="rounded-2xl border border-border/60 bg-card/60 backdrop-blur p-5 flex gap-4 items-center hover:border-gold/40 transition"
+          >
+            <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-card border border-gold/30 text-gold">
+              <Instagram className="h-5 w-5" />
+            </span>
+            <div>
+              <h4 className="text-base">Follow on Instagram</h4>
+              <p className="text-sm text-muted-foreground mt-1">@saptarishis_astrology_service</p>
+            </div>
+          </a>
 
           <div className="rounded-2xl border border-border/60 bg-card/60 backdrop-blur p-5">
             <h4 className="text-sm font-semibold text-gold uppercase tracking-wider">Consultation charges</h4>

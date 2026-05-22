@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { MapPin, Clock, MessageCircle, Sparkles } from "lucide-react";
+import { MapPin, Clock, MessageCircle, Sparkles, Instagram } from "lucide-react";
 import { SITE, waLink } from "@/lib/site";
 
 export function Footer() {
@@ -44,6 +44,15 @@ export function Footer() {
                 className="text-muted-foreground hover:text-foreground inline-flex items-center gap-1"
               >
                 <MessageCircle className="h-3.5 w-3.5" /> WhatsApp
+              </a>
+            </li>
+            <li>
+              <a
+                href={SITE.instagram}
+                target="_blank" rel="noreferrer"
+                className="text-muted-foreground hover:text-foreground inline-flex items-center gap-1"
+              >
+                <Instagram className="h-3.5 w-3.5" /> Instagram
               </a>
             </li>
           </ul>
