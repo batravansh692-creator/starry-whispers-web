@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { MapPin, Clock, MessageCircle, Star, Phone, Video, Instagram } from "lucide-react";
+import { MapPin, Clock, MessageCircle, Star, Phone, Video, Instagram, Home } from "lucide-react";
 import { ContactForm } from "@/components/site/ContactForm";
 import { SITE, waLink } from "@/lib/site";
 
@@ -68,6 +68,13 @@ function ContactPage() {
                   <span>Meeting / Video Call</span>
                 </div>
                 <span className="font-display text-xl text-foreground">{SITE.pricing.currency}{SITE.pricing.meeting.toLocaleString("en-IN")}</span>
+              </div>
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2 text-sm">
+                  <Home className="h-4 w-4 text-gold" />
+                  <span>Vastu Consultation</span>
+                </div>
+                <span className="font-display text-xl text-foreground">{SITE.pricing.currency}{SITE.pricing.vastu.toLocaleString("en-IN")}</span>
               </div>
             </div>
           </div>

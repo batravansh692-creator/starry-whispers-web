@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Star, Sparkles, MessageCircle, MapPin, Clock, ShieldCheck, Quote, CheckCircle2, Phone, Instagram } from "lucide-react";
+import { ArrowRight, Star, Sparkles, MessageCircle, MapPin, Clock, ShieldCheck, Quote, CheckCircle2, Phone, Instagram, Home as HomeIcon } from "lucide-react";
 import portrait from "@/assets/saptarishis-hero.png";
 import desk from "@/assets/astrologer-desk.jpg";
 import { SERVICES } from "@/lib/services";
@@ -196,6 +196,10 @@ function Home() {
               <div className="rounded-2xl border border-gold/30 bg-card/80 px-5 py-3">
                 <p className="text-xs text-muted-foreground">Meeting / Video call</p>
                 <p className="font-display text-2xl text-foreground">{SITE.pricing.currency}{SITE.pricing.meeting.toLocaleString("en-IN")}</p>
+              </div>
+              <div className="rounded-2xl border border-gold/30 bg-card/80 px-5 py-3">
+                <p className="text-xs text-muted-foreground">Vastu consultation</p>
+                <p className="font-display text-2xl text-foreground">{SITE.pricing.currency}{SITE.pricing.vastu.toLocaleString("en-IN")}</p>
               </div>
             </div>
             <div className="mt-8 flex flex-wrap gap-3">
