@@ -126,7 +126,7 @@ function Home() {
       {/* WHY */}
       <section className="bg-card/60 border-y border-border/70">
         <div className="mx-auto max-w-6xl px-5 py-24 grid lg:grid-cols-2 gap-14 items-center">
-          <div className="relative rounded-[2rem] overflow-hidden border border-border shadow-deep aspect-[4/5] max-w-md mx-auto lg:mx-0">
+          <div className="relative rounded-[2rem] overflow-hidden border border-border shadow-deep aspect-[4/5] w-full max-w-md mx-auto lg:mx-0">
             <img src={desk} alt={`${SITE.astrologer} at work`} className="absolute inset-0 h-full w-full object-cover" />
           </div>
           <div>
