@@ -17,6 +17,7 @@ export const SITE = {
   pricing: {
     call: 3100,
     meeting: 5100,
+    vastu: 11000,
     currency: "₹",
   },
 };

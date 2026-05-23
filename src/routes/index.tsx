@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Star, Sparkles, MessageCircle, MapPin, Clock, ShieldCheck, Quote, CheckCircle2, Phone, Instagram } from "lucide-react";
+import { ArrowRight, Star, Sparkles, MessageCircle, MapPin, Clock, ShieldCheck, Quote, CheckCircle2, Phone, Instagram, Home } from "lucide-react";
 import portrait from "@/assets/saptarishis-hero.png";
 import desk from "@/assets/astrologer-desk.jpg";
 import { SERVICES } from "@/lib/services";

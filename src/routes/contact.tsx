@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { MapPin, Clock, MessageCircle, Star, Phone, Video, Instagram } from "lucide-react";
+import { MapPin, Clock, MessageCircle, Star, Phone, Video, Instagram, Home } from "lucide-react";
 import { ContactForm } from "@/components/site/ContactForm";
 import { SITE, waLink } from "@/lib/site";
 
