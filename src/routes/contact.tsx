@@ -69,6 +69,13 @@ function ContactPage() {
                 </div>
                 <span className="font-display text-xl text-foreground">{SITE.pricing.currency}{SITE.pricing.meeting.toLocaleString("en-IN")}</span>
               </div>
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2 text-sm">
+                  <Home className="h-4 w-4 text-gold" />
+                  <span>Vastu Consultation</span>
+                </div>
+                <span className="font-display text-xl text-foreground">{SITE.pricing.currency}{SITE.pricing.vastu.toLocaleString("en-IN")}</span>
+              </div>
             </div>
           </div>
 

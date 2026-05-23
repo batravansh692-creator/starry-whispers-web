@@ -62,7 +62,7 @@ function ServicesPage() {
           <h2 className="mt-3 font-display text-4xl md:text-5xl">Consultation fees</h2>
           <p className="mt-3 text-muted-foreground max-w-xl">Simple, transparent pricing for every kind of session.</p>
 
-          <div className="mt-10 grid gap-6 md:grid-cols-2">
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
             <div className="rounded-2xl border border-border bg-card p-7 flex flex-col gap-4">
               <div className="flex items-center gap-3">
                 <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-gold text-primary-foreground shadow-glow">
@@ -98,6 +98,27 @@ function ServicesPage() {
               </div>
               <a
                 href={waLink(`Namaste ${SITE.astrologer} ji, I'd like to book a Meeting / Video Consultation (₹${SITE.pricing.meeting}).`)}
+                target="_blank" rel="noreferrer"
+                className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-gradient-gold px-6 py-3 text-sm font-medium text-primary-foreground shadow-glow"
+              >
+                <MessageCircle className="h-4 w-4" /> Book this on WhatsApp
+              </a>
+            </div>
+
+            <div className="rounded-2xl border border-border bg-card p-7 flex flex-col gap-4">
+              <div className="flex items-center gap-3">
+                <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-gold text-primary-foreground shadow-glow">
+                  <Home className="h-5 w-5" />
+                </span>
+                <h3 className="font-display text-2xl">Vastu Consultation</h3>
+              </div>
+              <p className="text-sm text-muted-foreground">On-site or remote Vastu analysis for home, shop or workplace — with practical energy corrections.</p>
+              <div className="mt-auto">
+                <p className="font-display text-4xl text-gradient-gold">{SITE.pricing.currency}{SITE.pricing.vastu.toLocaleString("en-IN")}</p>
+                <p className="text-xs text-muted-foreground mt-1">Per visit · No hidden charges</p>
+              </div>
+              <a
+                href={waLink(`Namaste ${SITE.astrologer} ji, I'd like to book a Vastu Consultation (₹${SITE.pricing.vastu}).`)}
                 target="_blank" rel="noreferrer"
                 className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-gradient-gold px-6 py-3 text-sm font-medium text-primary-foreground shadow-glow"
               >
